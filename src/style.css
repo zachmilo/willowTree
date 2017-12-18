@@ -1,0 +1,23 @@
+.right {
+  background: rgba(29, 255, 13, 0.5)
+}
+
+.wrong {
+    background: rgba(255, 13, 13, 0.5)
+}
+
+.card {
+  height: 100%
+}
+
+.customHero {
+  margin-bottom: 2%; 
+}
+
+.customButton {
+  margin-top: 2%;
+}
+
+.navbar-item img {
+  max-height: 4.75rem;
+}
