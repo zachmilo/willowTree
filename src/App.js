@@ -77,7 +77,7 @@ class App extends Component {
         newNumber = Math.floor((Math.random() * profiles.length-1));
         let hasUrl = profiles[newNumber].headshot.url;
         if(!randomInts.includes(newNumber) && hasUrl) {
-          result.push(profiles[newNumber]);
+          result.push(Object.assign({},profiles[newNumber]));
           randomInts.push(newNumber)
         }
       }
@@ -155,7 +155,7 @@ class App extends Component {
    */
   wrong(selectedCard) {
     let { cardIndex } = selectedCard.props;
-    let { cardsToAdd, toFind, totalguess } = this.state;
+    let { cardsToAdd, toFind, totalguess, profiles } = this.state;
     if(cardIndex === toFind) {
       totalguess.push(true);
       this.setState({isCorrect: true});
@@ -163,13 +163,15 @@ class App extends Component {
     }
     else {
       let cardData = cardsToAdd[cardIndex];
+      console.log(cardData);
+      console.log(profiles)
       cardData.setColor = 'wrong';
       cardData.isSelected = true;
-      cardsToAdd[cardIndex] = cardData; 
+      //cardsToAdd[cardIndex] = cardData; 
 
       totalguess.push(false);
       this.setState({totalguess: totalguess });
-      this.setState({cardsToAdd: cardsToAdd })
+     // this.setState({cardsToAdd: cardsToAdd })
     }
   }
 
