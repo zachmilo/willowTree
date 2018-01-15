@@ -163,15 +163,14 @@ class App extends Component {
     }
     else {
       let cardData = cardsToAdd[cardIndex];
-      console.log(cardData);
-      console.log(profiles)
+
       cardData.setColor = 'wrong';
       cardData.isSelected = true;
-      //cardsToAdd[cardIndex] = cardData; 
+      cardsToAdd[cardIndex] = cardData; 
 
       totalguess.push(false);
       this.setState({totalguess: totalguess });
-     // this.setState({cardsToAdd: cardsToAdd })
+      this.setState({cardsToAdd: cardsToAdd })
     }
   }
 
